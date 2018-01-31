@@ -1,0 +1,17 @@
+{
+  "name": "embedplayer",
+  "version": "1.0.0",
+  "description": "loading embed player into ifram",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start":"nodemon index.js"
+  },
+  "author": "Ali Abu Ras <aliaburas80@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^2.5.7",
+    "express": "^4.16.2",
+    "nodemon": "^1.14.11"
+  }
+}

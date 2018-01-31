@@ -1,0 +1,28 @@
+<html>
+    <header>
+        <title>Embed Player</title>
+        <style>
+            iframe{
+                width: 1280px;
+                height: 720px;
+                overflow: hidden;
+                border: 0px none; 
+                position: relative; 
+                z-index: 0;
+            }
+            body{
+                overflow: hidden;
+                margin: 0 auto;
+                text-align: center;
+                margin-top: 20px;
+                background: #f1f1f1;
+            }
+        </style>
+    </header>
+    <body>
+        <div>
+            <h2>Embed Player</h2>
+        </div>
+        <iframe marginheight="0" marginwidth="0" allowfullscreen="true" scrolling="no" width="560px" frameborder="0" height="315px" src="<%= location %>"></iframe>
+    </body>
+</html>
