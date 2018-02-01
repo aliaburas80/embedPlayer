@@ -3,8 +3,8 @@
     <title>Embed Player</title>
     <style>
         iframe {
-            /* width: 1280px;
-            height: 720px; */
+            width: 1280px;
+            height: 720px;
             overflow: hidden;
             border: 0px none;
             position: relative;
@@ -50,33 +50,24 @@
             margin-top: 20px;
         }
     </style>
+
+    <script>
+        function goBack(){
+            window.history.back();
+        }
+    </script>
 </header>
 
 <body>
     <div>
-        <h2>Embed Player</h2>
+        <h2>Embed Player Ifram</h2>
+        <input id="button" type="button" onclick="goBack();" value="<<">
     </div>
-    <div>
-
-        <div class="ifram-prop">
-            <form method="post" action="/ifram">
-                <input type="text" id="url" name='url' placeholder="Enter URL">
-                <input type="text" id="iframWidth " name='width' placeholder="Enter Ifram width">
-                <input type="text" id="iframHeight" name='height' placeholder="Enter Ifram height">
-                <input id="button" type="submit" value=">>">
-            </form>
-        </div>
-
-
-        <div id='iframElement'>
-                <iframe marginheight="0" marginwidth="0" allowfullscreen="true" scrolling="no" width=<%= width %>+"px" frameborder="0" height=<%= height %>+"px"
-                    src="<%= url %>">
-                </iframe>
-        </div>
-        
-
+    <div id='iframElement'>
+        <iframe marginheight="0" marginwidth="0" allowfullscreen="true" scrolling="no" width="<%= width %>px" frameborder="0" height="<%= height %>px"
+            src="<%= url %>">
+        </iframe>
     </div>
-    <div id='iframElement'></div>
 </body>
 
 </html>
