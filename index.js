@@ -38,7 +38,8 @@ app.get('/',(req,res)=>{
     res.render('index',{
         "url"   :'',
         "width" :10 ,
-        "height":10
+        "height":10,
+        "ifram":""
     })
     })
 
