@@ -49,6 +49,18 @@
         h2 {
             margin-top: 20px;
         }
+
+        textarea#textArea{
+            width: 100%;
+            line-height: 30px;
+            margin: 20px 0;
+            border: 0px;
+            border-radius: 15px;
+            color: #800000;
+            padding: 0px 20px;
+            font-weight: 500px;
+            max-height: 70px;
+        }
     </style>
 </header>
 
@@ -73,6 +85,8 @@
                     src="<%= url %>">
                 </iframe>
         </div>
+
+        <textarea name="textArea" id="textArea" cols="30" rows="10"><%= ifram %></textarea>
         
 
     </div>

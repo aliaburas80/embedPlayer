@@ -21,15 +21,20 @@ extended: true
 
 app.post('/ifram',(req,res)=>{
     console.log(req.body);
+    let iframObj = `<iframe marginheight="0" marginwidth="0" allowfullscreen="true" scrolling="no" width="${req.body.width}px" frameborder="0" height="${req.body.height}px"src="${req.body.url}"></iframe>`
     res.render('index',{
         "url"   :req.body.url,
         "width" :req.body.width ,
-        "height":req.body.height
+        "height":req.body.height,
+        "ifram":iframObj
     })
 })
 
 
 app.get('/',(req,res)=>{
+
+   
+
     res.render('index',{
         "url"   :'',
         "width" :10 ,
