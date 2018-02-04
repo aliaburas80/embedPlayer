@@ -62,6 +62,15 @@
             max-height: 70px;
         }
     </style>
+
+    <script>
+        function getURL(){
+            var url=document.getElementById('url').value;
+            var link = document.createElement('a');
+            link.href = url;
+            document.getElementById('domain').value=link.protocol+'//'+link.hostname; 
+        }
+    </script>
 </header>
 
 <body>
@@ -74,24 +83,38 @@
     <div>
 
         <div class="ifram-prop">
-            <form method="post" action="/ifram">
-                <input type="text" id="url" name='url' placeholder="Enter URL">
+            <form method="post" action="/ifram" onsubmit="getURL()">
+                <input type="text" id="url" name='url' placeholder="Enter URL" onkeydown="getURL()" onfocus="getURL()" onchange="getURL()">
                 <input type="text" id="iframWidth " name='width' placeholder="Enter Ifram width">
                 <input type="text" id="iframHeight" name='height' placeholder="Enter Ifram height">
+                <input type="text" id="domain" name='domain' placeholder="Enter Ifram height">
                 <input id="button" type="submit" value=">>">
             </form>
         </div>
 
 
         <div id='iframElement'>
-                <iframe marginheight="0" marginwidth="0" allowfullscreen="true" scrolling="no" width=<%= width %>+"px" frameborder="0" height=<%= height %>+"px"
-                    src="<%= url %>">
+                <iframe 
+                    marginheight    = "0" 
+                    marginwidth     = "0" 
+                    allowfullscreen = "true" 
+                    scrolling       = "no" 
+                    nwfaketop 
+                    width           = <%= width %>+"px" 
+                    frameborder     = "0" 
+                    height          = <%= height %>+"px"
+                    src             = "<%= url %>">
                 </iframe>
         </div>
 
-        <textarea name="textArea" id="textArea" cols="30" rows="10"><%= ifram %></textarea>
+        <textarea 
+            name = "textArea" 
+            id   = "textArea" 
+            cols = "30" 
+            rows = "10">
+            <%= ifram %>
+        </textarea>
         
-
     </div>
     <div id='iframElement'></div>
 </body>
