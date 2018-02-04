@@ -1,5 +1,7 @@
 let express = require('express');
-let ejs = require('ejs')
+let ejs = require('ejs');
+var https = require('https');
+var http = require('http');
 let app = express();
 let helmet = require('helmet')
 
@@ -7,6 +9,7 @@ let bodyParser = require("body-parser")
 
 //
 app.set('port', process.env.PORT || 8010);
+app.set('securePort', process.env.PORT || 443);
 //
 const host = "http://localhost:3000/ar/embed/"
 
@@ -50,5 +53,8 @@ app.get('/', (req, res, next) => {
     })
 })
 
+console.log(app.get('securePort'));
 console.log(app.get('port'));
-app.listen(app.get('port'));
+http .createServer(app).listen(app.get('port'));
+https.createServer(app).listen(app.get('securePort'));
+//app.listen(app.get('port'));
