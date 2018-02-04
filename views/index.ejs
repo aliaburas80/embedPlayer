@@ -61,6 +61,12 @@
             font-weight: 500px;
             max-height: 70px;
         }
+
+        input#domain {
+            opacity: 0;
+            width: 0;
+        }
+
     </style>
 
     <script>
@@ -69,6 +75,7 @@
             var link = document.createElement('a');
             link.href = url;
             document.getElementById('domain').value=link.protocol+'//'+link.hostname; 
+            console.log(`Domain:  ${document.getElementById('domain').value}`)
         }
     </script>
 </header>
