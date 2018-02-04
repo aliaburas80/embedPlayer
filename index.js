@@ -56,5 +56,5 @@ app.get('/', (req, res, next) => {
 console.log(app.get('securePort'));
 console.log(app.get('port'));
 http .createServer(app).listen(app.get('port'));
-https.createServer(app).listen(app.get('securePort'));
+//https.createServer(app).listen(app.get('securePort'));
 //app.listen(app.get('port'));
